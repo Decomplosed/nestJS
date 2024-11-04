@@ -48,4 +48,18 @@ export class UsersService {
 
     return user;
   }
+
+  create(user: {
+    name: string;
+    email: string;
+    role: 'INTERN' | 'ENGINEER' | 'ADMIN';
+  }) {
+    const usersByHighestId = [...this.users].sort((a, b) => (b.id = a.id));
+    const newUser = {
+      id: usersByHighestId[0].id + 1,
+      ...user,
+    };
+    this.users.push(newUser);
+    return newUser;
+  }
 }
