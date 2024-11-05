@@ -66,9 +66,9 @@ export class UsersService {
   update(
     id: number,
     updatedUser: {
-      name: string;
-      email: string;
-      role: 'INTERN' | 'ENGINEER' | 'ADMIN';
+      name?: string;
+      email?: string;
+      role?: 'INTERN' | 'ENGINEER' | 'ADMIN';
     },
   ) {
     this.users = this.users.map((user) => {
